@@ -173,7 +173,7 @@ void Phone_Make_Call(void)
 			/* To display counting integer - time elapsed(seconnds)*/
 			int i=0,num=0,j,k;
 			int digit[4] ={0};
-	    char character[5]= "0000";
+	                char character[5]= "0000";
 			
 			char key = KEYPAD_NOT_PRESSED;
 			
