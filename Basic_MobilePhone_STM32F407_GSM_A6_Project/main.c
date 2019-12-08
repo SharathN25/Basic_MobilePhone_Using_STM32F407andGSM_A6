@@ -35,7 +35,7 @@ int main(void)
 	/********************** All Devices Initialization - START *********************/
 	
 	/* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+        HAL_Init();
 	
 	/* Initialize  LCD */
 	LCD_Init();
@@ -185,24 +185,25 @@ void Phone_Make_Call(void)
 				{
 					/*If yes, the display integer as time elapsed*/
 					  i =num;
-			      LCD_Clear_Then_Display(character);
+			                  LCD_Clear_Then_Display(character);
 					  j=3,k=0;
-						while(i>0)
-						{
-							digit[j--] = i%10;
-							i = i/10;
-						}
-						while(k<4)
-						{
-							character[k] = digit[k]+'0';
-							k++;
-						}
+					  while(i>0)
+					  {
+					    digit[j--] = i%10;
+					    i = i/10;
+					  }
+					
+					  while(k<4)
+					  {
+					    character[k] = digit[k]+'0';
+					     k++;
+					  }
 						
-						num++;
+					  num++;
 					  HAL_Delay(600);
-				}
+				 }
 				
-				/*If at any momeny, "B" is pressed then cut the call*/	
+			 /*If at any momeny, "B" is pressed then cut the call*/	
 			 key = KEYPAD_Read();
 			 if(key != KEYPAD_NOT_PRESSED)
 			 {
@@ -233,9 +234,9 @@ void Phone_Make_Call(void)
 	 }
 	 else
 	 {
-			LCD_Clear_Then_Display("Invalid input");
-			Phone_Home_Display();
-			return;
+	       LCD_Clear_Then_Display("Invalid input");
+	       Phone_Home_Display();
+	       return;
 	  }
 		
 	}
@@ -301,7 +302,7 @@ void Phone_Send_SMS(void)
 			Phone_Home_Display();
 			return;
 		}
-	  else
+	        else
 		{
 			LCD_Clear_Then_Display("Invalid input");
 			Phone_Home_Display();
@@ -343,19 +344,19 @@ void Phone_Receive_Call(void)
 		/* Now Check which key is pressed */
 	  if(key == 'B')
 	  {
-			GSM_HangUp_Call();
+		  GSM_HangUp_Call();
 		  GSM_Clear_RX_buffer();
 		  Phone_Home_Display();
 		  return;
  	  }
 	
-    if(key == 'C')
-		{
-			GSM_Receive_Call();
+           if(key == 'C')
+	   {
+		  GSM_Receive_Call();
 		  /* To display counting integer - time elapsed(seconnds)*/
 		  int i=0,num=0,j,k;
 		  int digit[4] ={0};
-	    char character[5]= "0000";
+	          char character[5]= "0000";
 		
 		  char key = KEYPAD_NOT_PRESSED;
 		  HAL_Delay(250);
@@ -389,30 +390,30 @@ void Phone_Receive_Call(void)
 			  /*If at any momeny, "B" is pressed then cut the call*/			 
 			  key = KEYPAD_Read();
 			  if(key != KEYPAD_NOT_PRESSED)
+			   {
+				if(key == 'B')
 				{
-					if(key == 'B')
-					{
-						GSM_HangUp_Call();
-					  LCD_Clear_Then_Display("Call Ended!!");
+			            GSM_HangUp_Call();
+				    LCD_Clear_Then_Display("Call Ended!!");
 				    GSM_Clear_RX_buffer();
 				    HAL_Delay(1500);
 				    Phone_Home_Display();
 				    return;
-				  }
+				 }
 				 	 
-			  }
+			   }
 			 
 			  /*Check if call ended, if so display same and exit*/
 			  if(GSM_Compare_GSMData_With(call_end))
-				{
-					LCD_Clear_Then_Display("Call Ended!!");
-				  GSM_Clear_RX_buffer();
-				  HAL_Delay(1500);
-				  Phone_Home_Display();
-				  return;
+			  {
+				LCD_Clear_Then_Display("Call Ended!!");
+				GSM_Clear_RX_buffer();
+				HAL_Delay(1500);
+				Phone_Home_Display();
+				return;
 			  }		
 				
-        HAL_Delay(100);			
+                   HAL_Delay(100);			
 		
 	    }
 			
@@ -460,10 +461,10 @@ void Phone_Receive_SMS(void)
 	 GSM_Clear_RX_buffer();	
 	 Phone_Home_Display();	
 	 return;
-  }
+        }
 	else
 	{
-		Phone_Receive_SMS();
+	     Phone_Receive_SMS();
 	}
 	
 }
