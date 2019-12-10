@@ -21,7 +21,7 @@ The hardware components required for this project are :
 4. Hex Keypad
 5. 8Ω Speakers and Condensor Microphone 
 
-**Connections are made as shown in the below figure : **
+**Connections are made as shown in the below figure :**
 
 <img src ="Images/Basic_Mobile_Phoen.png">
 
