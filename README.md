@@ -28,5 +28,5 @@ The hardware components required for this project are :
 ## Upload the code
 Once connections are made, upload the code in the project **[Basic_MobilePhone_STM32F407_GSM_A6_Project](https://github.com/SharathN25/Basic_MobilePhone_Using_STM32F407andGSM_A6/tree/master/Basic_MobilePhone_STM32F407_GSM_A6_Project)** using the Kiel uVision IDE. 
 
-## More Detailed steps for this project
+## You can find the more detailed steps for building Basic Mobile Phone below
  **Instructables Link -->** 
