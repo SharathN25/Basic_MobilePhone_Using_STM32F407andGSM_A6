@@ -1,5 +1,5 @@
 # Basic Mobile Phone Using STM32F407 Discovery kit and GSM module A6 Module
-This is repository guides you on how you can build a **Basic Mobile Phone** using STM32F407 Microcontroller and GSM A6 module. This project has 3 main components, they are:
+This repository guides you on how you can build a **Basic Mobile Phone** using STM32F407 Microcontroller and GSM A6 module. This project has 3 main components, they are:
 
 1. **GSM A6 Module**
 2. **LCD 16x02**
